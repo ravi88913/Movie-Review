@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsfirst</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin-left: 15%;
+            font-size: 40px;
+            color: white;
+        }
+
+
+        input {
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+
+        input:focus {
+            background-color: darksalmon;
+        }
+
+        input[type="submit"]:hover {
+            background-color: aquamarine;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="image copy 37.png" alt="" style="filter: blur(8px); position: fixed;z-index: -5;height: 100%;width: 115%;">
+    <script>
+        function data() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = document.getElementById("n3").value;
+            var d = document.getElementById("n4").value;
+            //if field is empty show the eror
+            if (a == "" || b == "" || c == "" || d == "") {
+                alert("all the field are mendatory");
+                return false;
+            }
+            else if (b.length<10 || b.length>10) {
+                alert("Number should be of 10 digit please enter valid number")
+                return false
+            }
+            else if (isNaN(b)) {
+                alert("only no are allowed please enter a valid number")
+                return false
+            }
+            else if (c!=d){
+                alert("please enter the same pasword")
+                return false
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+    <form onsubmit="return data()" action="index.html">
+        <label for="User-Id">User-Id</label><br>
+        <input type="User-id" id="n1"><br>
+        <label for="Number">Mobile Number</label><br>
+        <input type="number" id="n2"><br>
+        <label for="Password">Password</label><br>
+        <input type="password" id="n3"><br>
+        <label for="Password">Confirm Password</label><br>
+        <input type="password" id="n4"><br>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
